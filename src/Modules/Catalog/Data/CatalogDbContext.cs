@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Catalog.Data
+﻿namespace Catalog.Data
 {
     public class CatalogDbContext : DbContext
     {
@@ -8,7 +6,8 @@ namespace Catalog.Data
         public DbSet<Product> Products  => Set<Product>();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().Property(c=>c.Name).IsRequired().HasMaxLength(100);
+            modelBuilder.HasDefaultSchema("catalog");
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
         }
     }

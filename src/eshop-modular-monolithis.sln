@@ -25,9 +25,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket", "Modules\Basket\Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared\Shared.csproj", "{DF11E2DA-353D-4AB0-AE88-525852416C0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshop-modular-monolithis.AppHost", "eshop-modular-monolithis.AppHost\eshop-modular-monolithis.AppHost.csproj", "{2F5A4EA6-7F84-40CC-85CF-9373E2FBAA16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop-modular-monolithis.AppHost", "eshop-modular-monolithis.AppHost\eshop-modular-monolithis.AppHost.csproj", "{2F5A4EA6-7F84-40CC-85CF-9373E2FBAA16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshop-modular-monolithis.ServiceDefaults", "eshop-modular-monolithis.ServiceDefaults\eshop-modular-monolithis.ServiceDefaults.csproj", "{BB72C02E-85CE-46CC-AE47-3A8FBA517D3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspireHost", "AspireHost", "{57F2FBCF-F2B2-499E-99CE-CEB4E5DD4CC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{46A24A3B-3A01-447B-843E-CFB1D0D8D5B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{D6A6B53C-09FC-4390-86C0-3550F8004C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EshopApp.Integration.Tests", "Tests\IntegrationTests\EshopApp.Integration.Tests\EshopApp.Integration.Tests.csproj", "{76A08866-279F-4B7C-A3D8-837DA009D855}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +71,10 @@ Global
 		{BB72C02E-85CE-46CC-AE47-3A8FBA517D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB72C02E-85CE-46CC-AE47-3A8FBA517D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB72C02E-85CE-46CC-AE47-3A8FBA517D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A08866-279F-4B7C-A3D8-837DA009D855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A08866-279F-4B7C-A3D8-837DA009D855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A08866-279F-4B7C-A3D8-837DA009D855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A08866-279F-4B7C-A3D8-837DA009D855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +88,10 @@ Global
 		{7485A089-A103-4222-990C-44313FD5E1BF} = {86B7F613-88A6-43ED-9C45-8F98AB7653DC}
 		{34D5FF34-7089-4186-A242-3C2A1C1D2CF9} = {7D4F743F-6A36-4C61-98B8-E64CD2C720AE}
 		{DF11E2DA-353D-4AB0-AE88-525852416C0C} = {9C18AC87-D033-475D-B5F8-1D9467D7F064}
+		{2F5A4EA6-7F84-40CC-85CF-9373E2FBAA16} = {57F2FBCF-F2B2-499E-99CE-CEB4E5DD4CC0}
+		{BB72C02E-85CE-46CC-AE47-3A8FBA517D3C} = {57F2FBCF-F2B2-499E-99CE-CEB4E5DD4CC0}
+		{D6A6B53C-09FC-4390-86C0-3550F8004C2F} = {46A24A3B-3A01-447B-843E-CFB1D0D8D5B6}
+		{76A08866-279F-4B7C-A3D8-837DA009D855} = {D6A6B53C-09FC-4390-86C0-3550F8004C2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E79F18F2-A791-4A8D-95AB-5D2F5375B9DC}

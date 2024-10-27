@@ -34,7 +34,6 @@ namespace Catalog.Products.Models
             Category = category;
             Description = description;
             ImageFile = imagefile;
-            Price = price;
             // if product price changed then raise ProductPriceChanged a domain events
             if (Price != price)
             {
