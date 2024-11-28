@@ -1,6 +1,4 @@
-﻿using Basket.Basket.Dtos;
-using Basket.Data.Repository;
-using Shared.CQRS;
+﻿using Basket.Data.Repository;
 
 namespace Basket.Basket.Features.GetBasket;
 

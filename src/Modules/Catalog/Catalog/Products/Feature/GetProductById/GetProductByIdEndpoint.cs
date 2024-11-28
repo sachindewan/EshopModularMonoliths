@@ -1,4 +1,5 @@
-﻿namespace Catalog.Products.Features.GetProductById;
+﻿
+namespace Catalog.Products.Features.GetProductById;
 
 //public record GetProductByIdRequest(Guid Id);
 public record GetProductByIdResponse(ProductDto Product);

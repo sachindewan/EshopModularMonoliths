@@ -1,5 +1,5 @@
 ﻿using Basket.Data.Repository;
-using Catalog.Products.Features.GetProductById;
+using Catalog.Contracts.Products.Feature.GetProductById;
 using FluentValidation;
 using Shared.Contracts.CQRS;
 

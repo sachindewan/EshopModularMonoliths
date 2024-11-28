@@ -9,7 +9,6 @@ global using Catalog.Data;
 global using Catalog.Data.Seed;
 global using Shared.Data.Interceptors;
 global using Shared.Contracts.CQRS;
-global using Shared.CQRS;
 global using Catalog.Products.Dtos;
 global using Mapster;
 global using Carter;
@@ -18,4 +17,5 @@ global using MediatR;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Http;
 global using Catalog.Products.Exceptions;
+global using Catalog.Contracts.Products.Feature.GetProductById;
 
