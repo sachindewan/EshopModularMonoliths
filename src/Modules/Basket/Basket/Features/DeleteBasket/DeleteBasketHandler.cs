@@ -1,4 +1,5 @@
-﻿using Shared.Contracts.CQRS;
+﻿using Basket.Data.Repository;
+using Shared.Contracts.CQRS;
 
 namespace Basket.Basket.Features.DeleteBasket;
 

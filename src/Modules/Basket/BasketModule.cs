@@ -1,4 +1,5 @@
-﻿using Shared.Data;
+﻿using Basket.Data.Repository;
+using Shared.Data;
 using Shared.Data.Interceptors;
 
 namespace Basket
@@ -12,6 +13,8 @@ namespace Basket
             // Api Endpoint services
 
             // Application use case services
+            builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+            builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
 
             // Data - Infrastructure services
             builder.Services.AddScoped<ISaveChangesInterceptor, AuditableInterceptor>();

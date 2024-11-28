@@ -15,6 +15,9 @@ builder.Services
 builder.Services
     .AddMediatRWithAssemblies(catalogAssembly, basketAssembly, orderingAssembly);
 
+
+builder.AddRedisClient("redis");
+
 builder
     .AddBasketModule(builder.Configuration)
     .AddCatalogModule(builder.Configuration);

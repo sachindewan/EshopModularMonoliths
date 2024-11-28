@@ -1,5 +1,6 @@
 ﻿using Basket.Basket.Dtos;
 using Basket.Basket.Models;
+using Basket.Data.Repository;
 using FluentValidation;
 using Shared.Contracts.CQRS;
 

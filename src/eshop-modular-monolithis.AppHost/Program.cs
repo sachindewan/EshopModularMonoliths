@@ -4,6 +4,7 @@ var password = builder.AddParameter("password", secret: true);
 
 var postgres = builder.AddPostgres("EshopServer", username, password).WithPgAdmin().WithDataVolume();
 var EshopDb = builder.ExecutionContext.IsRunMode ? postgres.AddDatabase("EshopDb") : builder.AddManagedResource("EshopDb");
-builder.AddProject<Projects.Api>("api").WithReference(EshopDb);
+var redis = builder.ExecutionContext.IsPublishMode ? builder.AddRedis("redis").WithRedisInsight() : builder.AddManagedResource("redis");
+builder.AddProject<Projects.Api>("api").WithReference(EshopDb).WithReference(redis);
 
 builder.Build().Run();
