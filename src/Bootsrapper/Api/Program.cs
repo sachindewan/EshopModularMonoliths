@@ -1,6 +1,9 @@
-using Carter;
-using Shared.Exceptions.Handler;
-using Shared.Extensions;
+
+using Basket.Basket.EventHandlers;
+using Catalog.Products.Events;
+using Catalog.Products.Models;
+using MassTransit;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 // add services to the container
@@ -15,9 +18,11 @@ builder.Services
 builder.Services
     .AddMediatRWithAssemblies(catalogAssembly, basketAssembly, orderingAssembly);
 
-
+builder.Services
+    .AddMassTransitWithAssemblies(builder.Configuration, catalogAssembly, basketAssembly, orderingAssembly);
 builder.AddRedisClient("redis");
-
+builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);
+builder.Services.AddAuthorization();
 builder
     .AddBasketModule(builder.Configuration)
     .AddCatalogModule(builder.Configuration);
@@ -31,13 +36,17 @@ var app = builder.Build();
 app.MapCarter();
 app.UseExceptionHandler(options => { });
 app.MapDefaultEndpoints();
-
+app.UseAuthentication();
+app.UseAuthorization();
 //configure http request pipeline
 app.UseCatalogModule()
     .UseOrderingModule()
     .UseBasketModule();
-app.MapGet("/", () =>
+app.MapGet("/", async (IPublishEndpoint publish, CancellationToken token) =>
 {
     Results.Ok();
 });
 app.Run();
+
+
+

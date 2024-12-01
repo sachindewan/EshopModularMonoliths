@@ -22,7 +22,7 @@ namespace Catalog.Products.Models
                 ImageFile = imagefile,
                 Price = price
             };
-            product.AddDomainEvents(new ProductCreatedEvent(product));
+            product.AddDomainEvents(new ProductPriceChangedEvent(product));
             return product;
 
         }
