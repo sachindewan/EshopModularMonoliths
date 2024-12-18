@@ -1,4 +1,5 @@
-﻿using Basket.Data.Repository;
+﻿using Basket.Data.Processors;
+using Basket.Data.Repository;
 using Shared.Data;
 using Shared.Data.Interceptors;
 
@@ -25,6 +26,7 @@ namespace Basket
                 var sp = builder.Services.BuildServiceProvider();
                 optionsBuilder.AddInterceptors(sp.GetRequiredService<ISaveChangesInterceptor>());
             });
+            builder.Services.AddHostedService<OutboxProcessor>();
             return builder;
         }
         public static IApplicationBuilder UseBasketModule(this IApplicationBuilder app)

@@ -25,8 +25,8 @@ builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);
 builder.Services.AddAuthorization();
 builder
     .AddBasketModule(builder.Configuration)
-    .AddCatalogModule(builder.Configuration);
-    //.AddOrderingModule(builder.Configuration);
+    .AddCatalogModule(builder.Configuration)
+    .AddOrderingModule(builder.Configuration);
 builder.Services
     .AddExceptionHandler<CustomExceptionHandler>();
 
